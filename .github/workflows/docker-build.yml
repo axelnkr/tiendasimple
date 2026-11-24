@@ -1,0 +1,16 @@
+name: Build Backend Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Construir imagen Docker del backend
+        run: docker build -t tiendasimple-backend ./backend
